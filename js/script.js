@@ -33,8 +33,10 @@ buttonGuess.addEventListener("click", function(e){
     //check that the input is a good guess
     const goodGuess = checkInput(guess);
     if (goodGuess){
-        return guess;
+      //  return guess;
+        makeGuess(guess);
     }
+
 });
 
 const checkInput = function(input) {
@@ -50,12 +52,13 @@ const checkInput = function(input) {
     }
 };
 
-const makeGuess = function(letter) {
-    const letter = textInput.toUpperCase();
-    if (letter === guessedLetters.includes(letter)) {
+
+const makeGuess = function(guess) {
+    guess = guess.toUpperCase();
+    if (guessedLetters.includes(guess)) {
         message.innerText = `Oops, you've already guessed that letter!`;
     } else {
-        guessedLetters.push(letter);
+        guessedLetters.push(guess);
     }
     console.log(guessedLetters);
 };
