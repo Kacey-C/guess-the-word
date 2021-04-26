@@ -35,6 +35,7 @@ buttonGuess.addEventListener("click", function(e){
     if (goodGuess){
       //  return guess;
         makeGuess(guess);
+        alreadyGuessed();
     }
 
 });
@@ -61,4 +62,13 @@ const makeGuess = function(guess) {
         guessedLetters.push(guess);
     }
     console.log(guessedLetters);
+};
+
+const alreadyGuessed = function() {
+    guessedLettersElement.innerHTML = "";
+    for (const letters of guessedLetters) {
+        const li = document.createElement("li");
+        li.innerText = letters;
+        guessedLettersElement.append(li);
+    }
 };
