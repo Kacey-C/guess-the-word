@@ -17,7 +17,7 @@ const getWord = async function() {
     const data = await res.text();
     // console.log(data);
     
-    const wordArray = data.split("n");
+    const wordArray = data.split("\n");
     // console.log(wordArray);
     
     // pull a random word
